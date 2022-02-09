@@ -15,7 +15,7 @@ class Wordle:
                     fits = False
                 if word[i] in self.unsure_pos[i]:
                     fits = False
-                if word[i] in self.half_letters:
+                if word[i] in self.not_letters:
                     fits = False
             if fits:
                 self.possible_words.append(word)
@@ -27,6 +27,7 @@ class Wordle:
             for letter in self.half_letters:
                 if word.count(letter) == 1:
                     score += 10
+
             if score > best_score:
                 best_score = score
                 best_word = word
